@@ -1,0 +1,36 @@
+Selenium FB Crawler 簡易教學文：
+
+1. 執行方法；
+找到下面兩行
+account = ""
+key = ""
+輸入你的FB的 帳號 密碼 ，開始執行即可 !!!
+
+
+2. 執行流程：
+
+ (i)   打開 FireFox → 登入帳密 → 切換到你的主頁 → 不斷地往下滑後，存取html source code 
+
+ (ii)  切換到你的 「朋友」 頁面 → 不斷地往下滑後，存取朋友們的url
+ 
+ (iii) 開始切換到你 「朋友」 的主頁 → 不斷地往下滑後，存取朋友的 html source code 
+ 
+ (iv)  結束 (不會關網頁，ipython notebook 會顯示成功訊息)
+
+
+3. 函式說明：
+
+	getSourceCode(num)：
+	在網頁上網下滑 num 次，並回傳網頁的source code
+	預設是80次，可自行調整
+	
+	savePost_yours(sourceCode):
+	在你的執行目錄，產生FB_Users_Post_Sourcecode 資料夾
+	存入你本人的 Post source code
+	
+	saveUrls_friend(friend_url_bscode):
+	存入你朋友的url 
+	
+	savePost_friend(friend_post_bscode,url,error_time):
+	在你的執行目錄，產生FB_Friends_Post_Sourcecode 資料夾
+	存入你朋友的 Post source code
